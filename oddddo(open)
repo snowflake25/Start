@@ -14,29 +14,24 @@ int main(){
    arr = (int *)malloc(sizeof(int)*count);
 
    while (i < count){
-      if (num % 2 == 1)
-         arr[i] = num;
+      if (num % 2 == 1){
+      	arr[i] = num;
+	i++;
+      }    
       num++;
-      i++;
    }
    
-   for(i=0; i<count; i++){
-   		for(int j=count-1; j>=0; j++){
-				arr2[i]=arr[i]*arr[j];
-   			}
+   while(i<count){
+   	arr2[i]=arr[i]*arr[count-1];
+	i++;
+	count--;
    }
-	 
-	 for(i=0; i<count; i++){
-	 		sum=sum+arr2[i];
+
+	for(i=0; i<count; i++){
+	 	sum=sum+arr2[i];
 	 }
-	 
-/* 
-   while(count-1==0){
-      arr2[i]=arr[count-1];
-      count--;
-      i++;
-   }
-	 */
+
+printf("%d", sum);
    
    
 
